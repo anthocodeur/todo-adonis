@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List Products</title>
+  @entryPointStyles('app')
+  @entryPointScripts('app')
+</head>
+<body>
+  <main>
+    <div class="container py-5 mx-auto">
+      <h1 class="text-4xl">Liste des produits</h1>
+      <ul class="py-10">
+        @each(product in products)
+            <li>{{ product.title }} (id : {{ product.id }})</li>
+        @endeach  
+      </ul>
+    </div>
+  </main>
+</body>
+</html>
