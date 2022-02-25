@@ -8,9 +8,11 @@
   @entryPointScripts('app')
 </head>
 <body>
-  @include('layouts/partials/header')
-  <main>
-    @!section('content')
-  </main>
+  <section class="bg-white dark:bg-gray-800">
+    @include('layouts/partials/header')
+    <main>
+      @!section('content')
+    </main>
+  </section>
 </body>
 </html>
