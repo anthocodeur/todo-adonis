@@ -1,0 +1,11 @@
+@layout('layouts/main')
+@set('title', 'Todos page')
+
+@section('content')
+<section class="py-">
+    <div class="container flex flex-col items-center px-4 py-12 mx-auto">
+        <p class=" py-6 block max-w-2xl mt-4 text-xl text-gray-500 dark:text-gray-300 text-center">Retrouvez ci-dessous la liste des todos en base de données </p>
+        <h2 class="text-xl">{{ todo.name }}</h2>
+    </div>
+</section>
+@end
