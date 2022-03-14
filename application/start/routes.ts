@@ -19,9 +19,8 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import './todo/todos'
 
 Route.get('/', async ({ view }) => view.render('home')).as('home')
-Route.get('/todos', 'TodosController.index').as('todos.index')
-Route.get('/todo/:id', 'TodosController.show').as('todos.show')
 Route.get('/about', async ({ view }) => view.render('pages.about'))
 Route.get('/contact', async ({ view }) => view.render('pages.contact'))

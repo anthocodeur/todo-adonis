@@ -12,7 +12,11 @@ export default class TodosController {
 
   public async create({}: HttpContextContract) {}
 
-  public async store({}: HttpContextContract) {}
+  public async store({ request }: HttpContextContract) {
+    const todo = new Todo()
+    todo.name = request.input('name')
+    await todo.save()
+  }
 
   public async show({ params }: HttpContextContract) {
     const todo = await Todo.find(params.id)
@@ -25,5 +29,8 @@ export default class TodosController {
 
   public async update({}: HttpContextContract) {}
 
-  public async destroy({}: HttpContextContract) {}
+  public async destroy({ params }: HttpContextContract) {
+    const todo = await Todo.findOrFail(params.id)
+    todo.delete()
+  }
 }
