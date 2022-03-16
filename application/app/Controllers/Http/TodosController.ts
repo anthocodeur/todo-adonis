@@ -27,7 +27,15 @@ export default class TodosController {
 
   public async edit({}: HttpContextContract) {}
 
-  public async update({}: HttpContextContract) {}
+  public async update({ params: { id }, request }: HttpContextContract) {
+    const todo = await Todo.findOrFail(id)
+    const data = request.body()
+    todo
+      .merge({
+        ...data,
+      })
+      .save()
+  }
 
   public async destroy({ params }: HttpContextContract) {
     const todo = await Todo.findOrFail(params.id)
