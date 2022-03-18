@@ -2,10 +2,18 @@
 @set('title', 'Todos page')
 
 @section('content')
-<section class="py-">
-    <div class="container flex flex-col items-center px-4 py-12 mx-auto">
+<section class="py-4">
+    <div class="container max-w-4xl flex flex-col items-center px-4 py-4 mx-auto">
         <p class=" py-6 block max-w-2xl mt-4 text-xl text-gray-500 dark:text-gray-300 text-center">Retrouvez ci-dessous la liste des todos en base de données </p>
         <h2 class="text-xl">{{ todo.name }}</h2>
+        
+        <div class="py-5">
+            <a href="{{ route('todos.edit', [ todo.id ]) }}" class="py-2 px-4 bg-pink-600 hover:bg-pink-400 text-white cursor-pointer rounded-lg">Modifier un todo</a>
+            
+        </div>
+        <div class="py-2">
+            <a href="{{ route('todos.index')}}">Retour à la liste</a>
+        </div>
     </div>
 </section>
 @end

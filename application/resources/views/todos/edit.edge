@@ -1,0 +1,30 @@
+@layout('layouts/main')
+@set('title', 'Todos page')
+
+@section('content')
+<section class="py-4">
+    <div class="container max-w-4xl flex flex-col items-center px-4 py-4 mx-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="72" height="72"><path fill="none" d="M0 0h24v24H0z"/><path d="M6.414 16L16.556 5.858l-1.414-1.414L5 14.586V16h1.414zm.829 2H3v-4.243L14.435 2.322a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414L7.243 18zM3 20h18v2H3v-2z" fill="rgba(244,114,182,1)"/></svg>
+        <p class=" py-6 block max-w-2xl mt-4 text-xl text-gray-500 dark:text-gray-300 text-center font-bold">Modifier un todo</p>
+        <form method="post" class="w-full">
+            <div class="py-5">
+                <div>
+                    <label class="font-semibold text-pink-600">Nom du todo</label>
+                </div>
+                <div>
+                    <input type="text" name="name" value="{{ todo.name }}" class="w-full rounded-lg border border-gray-200 p-4 border border-gray-800" />
+                </div>
+            </div>
+            <div class="py-5">
+                <div>
+                    <label class="font-semibold text-pink-600">Description du todo</label>
+                </div>
+                <div>
+                    <textarea name="description" class="w-full rounded-lg border border-gray-200 p-4 border border-gray-800">{{ todo.description }} </textarea>
+                </div>
+            </div>
+            <input type="submit" value="Modifier" class="w-full rounded-lg border border-gray-200 bg-pink-600 hover:bg-pink-400 text-white py-2 cursor-pointer" />
+        </form>
+    </div>
+</section>
+@end
